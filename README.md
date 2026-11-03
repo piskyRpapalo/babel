@@ -23,8 +23,9 @@ Decree of the Sovereign (2026-11-03): all vocabulary pieces live here, once — 
 | registry/implementation.md | implementation records (§I–L) · sources (§G) · absorbed from the rack (§H) | docs/lexicon-implementation.md · docs/lexicon.md §G §H |
 | registry/reading-directions.md | the governance key · the world-name resolution · the term harvest · scrub law · roles | study 13-rosetta.md (the translator law stays in study) |
 | registry/coins-2026-11-03.md | the first coins: the Babel Registry · the Rosetta · the oversight clause | coined this date, Alphabet PASS measured |
+| registry/admission-law.md | the admission law · the key per collaborator · the HITL panel | coined 2026-11-03 under the Sovereign's FIRMO «Firmo todo» |
 
-Proposals (propose-only, each under its own FIRMO): **proposals/admission-law.md** — the Babel admission law, the key per collaborator, and the HITL panel design (decree ·6585001168).
+Proposals: proposals/admission-law.md was **coined 2026-11-03** — the law lives at registry/admission-law.md (the key per collaborator and the HITL panel, decree ·6585001168). The queue is open for the next proposal.
 
 ## For an AI landing here
 

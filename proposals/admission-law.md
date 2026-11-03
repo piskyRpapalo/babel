@@ -1,6 +1,6 @@
 # proposals/admission-law.md — the Babel admission law (the Tower of Babel proposal, decree ·6585001168)
 
-Status: PROPOSAL by the Desk · REQUIRES FIRMO of the Sovereign. Propose-only: nothing here admits anything until signed.
+Status: COINED 2026-11-03 — the Sovereign signed «Firmo todo»; the law lives at registry/admission-law.md. This folio stays as history (append-only), speaking with the names of its date.
 
 ## Admission law (draft)
 
