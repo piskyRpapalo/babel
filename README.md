@@ -19,7 +19,7 @@ Decree of the Sovereign (2026-11-03): all vocabulary pieces live here, once — 
 |---|---|---|
 | registry/governance.md | governance and method · open decisions · the HITL panel decree | preceptoros-web docs/lexicon.md §A §F · buzon#30 HITL decree |
 | registry/infrastructure.md | infrastructure and lanes · the one-map coins · fleet node names · the oven | docs/lexicon.md §B §C2 · study 13-rosetta.md amendments |
-| registry/game.md | the game (lore canon) · names signed · never confuse · forbidden | docs/lexicon.md §C §C1 §D §E · study 13-rosetta.md front-door amendment |
+| registry/game.md | historical lore canon of the retired game (theGame, retired 2026-10-28, corte D) · names signed · never confuse · forbidden | docs/lexicon.md §C §C1 §D §E · study 13-rosetta.md front-door amendment |
 | registry/implementation.md | implementation records (§I–L) · sources (§G) · absorbed from the rack (§H) | docs/lexicon-implementation.md · docs/lexicon.md §G §H |
 | registry/reading-directions.md | the governance key · the world-name resolution · the term harvest · scrub law · roles | study 13-rosetta.md (the translator law stays in study) |
 | registry/coins-2026-11-03.md | the first coins: the Babel Registry · the Rosetta · the oversight clause | coined this date, Alphabet PASS measured |
