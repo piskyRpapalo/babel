@@ -10,7 +10,7 @@ Decree of the Sovereign (2026-11-03): all vocabulary pieces live here, once — 
 4. Every term carries a way to see it with your own eyes (the Eye's rule); if no command shows it, it is a belief, not knowledge.
 5. History is append-only: an old folio speaks with the names of its date; aliases never die.
 6. Silicon proposes, carbon signs: sign-off is the Sovereign's; every preceptor travels propose-only.
-7. Forbidden as names, in any language (game.md §E): oracle · notary · depin · coin · clearing · magic · token-as-a-name · cryptocurrency. «bubble» names the language only as history — the language is the Acho language.
+7. Forbidden as names, in any language (game.md §E): oracle · notary · depin · coin · clearing · magic · token-as-a-name · cryptocurrency. «bubble» names the language only as history — the language is the Acho language. This law governs game-world names (registry/game.md §E); the registry's own word «coins» for its vocabulary files is legal and stays.
 8. One piece ≤ 16,384 B, declared per file. Private names never enter (scrub law): figures and paths stay, names go.
 
 ## The registry
