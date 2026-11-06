@@ -25,6 +25,7 @@ Decree of the Sovereign (2026-11-03): all vocabulary pieces live here, once — 
 | registry/coins-2026-11-03.md | the first coins: the Babel Registry · the Rosetta · the oversight clause | coined this date, Alphabet PASS measured |
 | registry/admission-law.md | the admission law · the key per collaborator · the HITL panel | coined 2026-11-03 under the Sovereign's FIRMO «Firmo todo» |
 | registry/coins-2026-11-04.md | the March coins: THE MARCH (formerly ODD) · ps (the Preceptor-Sweep) | coined by transcription: the Preceptor Contract (FIRMO 2026-11-03) |
+| registry/coins-2026-11-06.md | the STE root tooling coins: rewrite · measure · language_files · translation_drafts (25 signed renames, aliases kept) | coined by transcription: the signed census (preceptoros-web#681, FIRMO 2026-11-06) |
 
 Proposals: proposals/admission-law.md was **coined 2026-11-03** — the law lives at registry/admission-law.md (the key per collaborator and the HITL panel, decree ·6585001168). The queue is open for the next proposal.
 
