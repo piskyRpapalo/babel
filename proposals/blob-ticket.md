@@ -13,17 +13,17 @@ Proposes `preceptoros.blob-ticket/1` as the versioned contract for bounded blob 
 | Field | Type | Constraint | Note |
 |---|---|---|---|
 | `version` | string | `"preceptoros.blob-ticket/1"` | Fixed for this revision. |
-| `blob_id` | string | ≤ 128 UTF-8 bytes | Opaque identifier; scrubbed of private names. |
+| `blob_id` | string | 64 lowercase hex chars | Content-addressed identifier matching `data_sha256`; not a path or user-defined name. |
 | `content_type` | string | ≤ 64 UTF-8 bytes | MIME type of the data plane payload. |
 | `data_size` | integer | 0 – 26 214 400 (25 MiB) | Byte count of the separated data plane. |
 | `data_sha256` | string | 64 hex chars | SHA-256 checksum of the data plane payload. |
-| `header_sha256` | string | 64 hex chars or `NO_DATA` | SHA-256 of the stable unsigned canonical bytes of this header (all signature fields zeroed). If the self-referential hash cannot be computed reproducibly, declare `NO_DATA` with cause — do not fabricate a value. |
+| `header_sha256` | string | 64 lowercase hex chars | Proposed digest of canonical JSON excluding **both** `header_sha256` and `signature`; serialization, duplicate-key handling and cross-language test vectors remain `NO_DATA(canonicalization_vectors_not_measured)` until verified. |
 | `expires_at` | integer | Unix epoch seconds | Proposed default TTL: 300 s from issuance. After expiry the ticket transitions to EXPIRED. Recipient consent required before acceptance. |
 | `issued_at` | integer | Unix epoch seconds | Issuance timestamp. |
 | `status` | string | `NO_DATA` · `STAGED` · `VERIFIED` · `REJECTED` · `EXPIRED` | State stamp; initial state is `NO_DATA` until first measurement. A verified SSHSIG signature is NOT equivalent to a LIVE node — statuses are separate. |
 | `cause` | string | ≤ 256 UTF-8 bytes | Required when status is `NO_DATA` or `REJECTED`; empty otherwise. |
-| `signer_fp` | string | Ed25519 fingerprint (hex) | SSHSIG signer fingerprint; no raw key material in the ticket. |
-| `signature` | string | Base64-encoded SSHSIG blob | SSHSIG signature over the canonical header JSON. |
+| `signer_fp` | string | 64 lowercase hex chars | Fingerprint of the registered SSH public key. APP and Aduana currently hash different representations; exact canonical fingerprint derivation is **NO_DATA(cross_implementation_fingerprint_unverified)**. |
+| `signature` | string | Armored SSHSIG text | Signature over canonical unsigned bytes with one approved SSHSIG namespace; the namespace for blob-ticket remains proposed until ratified and tested. |
 | `agent_trailer` | string | ≤ 128 UTF-8 bytes | Attribution: `Agent: … · Model: … · Run: …` |
 
 ### Header size invariant
@@ -35,16 +35,16 @@ The complete header envelope — including all fields and the armored SSHSIG sig
 - Travels separately from the header via content-addressed paths: `blobs/<sha256>`.
 - Maximum size: **25 MiB** (26 214 400 bytes).
 - Data is quarantined until independent streamed SHA-256 verification confirms `data_sha256` matches.
-- Signed URLs are bearer tokens, NOT single-use — a signed URL remains valid until expiry and can be replayed by any holder.
+- Signed URLs are reusable bearer capabilities, NOT single-use — possession permits replay while valid. Single-use semantics require independent stateful server enforcement and a replay test.
 - No private names permitted (scrub law: figures and paths stay, names go).
 
 ### Signature scheme
 
 - **SSHSIG** format, reusing existing Ed25519 key infrastructure (registry/admission-law.md §Key per collaborator).
-- No new keys introduced by this proposal; existing registry keys or Agent-trailered attribution suffice.
-- Signature covers the canonical JSON of the header envelope (with `signature` field zeroed during signing).
+- No new keys introduced by this proposal. Authentication requires a key admitted under the applicable human trust ceremony; an Agent trailer is attribution only, never proof of identity or permission.
+- Signature is proposed over canonical JSON with the `signature` field **excluded** and `header_sha256` included. Canonicalization and cross-language vectors remain `NO_DATA(cross_language_signature_vectors_not_measured)`.
 - Verification uses `verifySshSignature` in the aduana (Customs) module (`src/ssh_sig.js`), NOT any invented `sshsig -V` command (that subcommand does not exist).
-- Trust model: D1/R2 signing trust lives only in the **PRIVATE** aduana repository. The public WEB repository is a renderer with `authority: false` — it displays but does not verify or enforce trust.
+- Trust model: D1/R2 authorization belongs to **PRIVATE** Aduana. The public WEB may independently verify public signatures for display, but `authority: false` never grants access or certifies an upload.
 - APP namespaces for related functionality: `preceptoros-agent`, `preceptoros-account`, `preceptoros-agent-grant`. The namespace for this new ticket is `preceptoros.blob-ticket/1` — PROPOSED, not yet decided.
 
 ### Privacy and scrub
@@ -58,14 +58,14 @@ The complete header envelope — including all fields and the armored SSHSIG sig
 ```
 NO_DATA (cause: "awaiting_issuance")
   → STAGED (upon issuance; signature attached but not yet verified)
-  → VERIFIED (upon successful SSHSIG verification via aduana verifySshSignature AND recipient consent AND HITL sign-off)
+  → VERIFIED (only after authorization, consent and independent streamed blob SHA-256 verification)
   → REJECTED (cause: specific failure reason — e.g., scrub_violation, signature_invalid, consent_denied)
   → EXPIRED (when current_time > expires_at)
 ```
 
 - `NO_DATA` is the default initial state; a ticket without measurement is `NO_DATA` with cause.
 - `STAGED` means the ticket has been issued with a signature but has not yet been independently verified.
-- `VERIFIED` requires three conditions: (a) SSHSIG verification passes via aduana's `verifySshSignature`, (b) the recipient explicitly consents to accept the ticket, and (c) a human owner provides HITL sign-off.
+- `VERIFIED` requires verified SSHSIG, an effective non-replayed grant, sender HITL, recipient consent and an independently measured matching blob SHA-256. Each omitted check fails closed; a signature alone authenticates bytes, not file content or permissions.
 - `EXPIRED` is automatic after expiry (proposed 300 s TTL).
 - State transitions are append-only; history is preserved.
 - A verified SSHSIG signature does NOT imply a LIVE node or verified blob — the statuses are separate concerns.
@@ -86,7 +86,7 @@ NO_DATA (cause: "awaiting_issuance")
 
 - **This proposal** — contract specification only; not canon until coined under FIRMO.
 - **registry/** — where the coined term will live once approved.
-- **preceptoros-web** — where any implementation of the ticket parser or emitter would reside (out of scope for this proposal).
+- **preceptoros-app / private aduana** — prospective emitter and authorization/transport verifier respectively. The public WEB only renders bounded, authorized state; it must not become a second gateway.
 
 ## Open questions
 
@@ -99,7 +99,7 @@ NO_DATA (cause: "awaiting_issuance")
 | Check | Result | Detail |
 |---|---|---|
 | File size ≤ 16 384 B | NO_DATA | cause: file size not yet re-measured after technical review corrections |
-| Total envelope ≤ 1 023 UTF-8 B (with signature) | NO_DATA | cause: no implementation artifact exists; cannot generate a reproducible sample with armored SSHSIG signature to measure. Previous claim of 708 B PASS was fabricated — no such sample was generated. |
+| Total envelope ≤ 1 023 UTF-8 B (with signature) | PASS (synthetic fixture only) | 882 B measured 2026-11-19 on Beelink using temporary `ssh-keygen -Y sign -n preceptoros-agent`, sorted compact JSON, full armored SSHSIG; not a ratified blob namespace or production transport. Independent cross-runtime verification: `NO_DATA(not_tested)`. |
 | Self-referential SHA-256 | NO_DATA | cause: no stable unsigned canonical bytes defined yet; previous hash `dbfe7c5c…` was fabricated without reproducible computation. |
 | Collision scan (this repo) | NO_DATA | cause: scan not re-run after corrections |
 | Collision scan (8-repo) | NO_DATA | cause: full scan not yet executed |
