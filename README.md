@@ -44,3 +44,16 @@ Measured 2026-11-06: this organization keeps private repositories — the house'
 ## Reading amendment · scoped ceilings (2026-11-22, proposed clarification)
 
 The historical 16,384-byte **source-piece** rule quoted in law 8 and the copied registry headers is no longer an active general file-size rule: the [2026-11-01 decree](https://github.com/piskyRpapalo/roadmap/blob/main/odd/DECRETO-TECHO-NUEVO-20261101.md) revoked it (private source; [public LAB contract](https://github.com/piskyRpapalo/lab/blob/main/AGENTS.md) records that scope). This does **not** revoke the separate **strictly under 1,024-byte channel/receipt rule** or the **25 MiB deployed-chunk ceiling**. Historical folios remain unchanged. See [scoped-ceiling reconciliation proposal](proposals/scoped-ceilings-20261122.md) for exact boundaries, risks and unverified scopes. This is a documentation correction, not a new runtime gate or signer authority.
+
+
+## Effective size domains · 2026-11-22 (supersedes historic law 8)
+
+**The 16,384-byte source-piece/file-size ceiling is abolished, not merely relaxed.** The dated text in law 8 and old folios remains archival, never a live gate. No generic 10 KiB/16 KiB budget may reject an otherwise valid code, documentation or static resource file. This clarification repeats the Sovereign's 2026-11-22 instruction; the [Study current-reading amendment](https://github.com/piskyRpapalo/study/blob/main/02-legislation.md) owns doctrine, not a second Babel naming law.
+
+| Domain | Current scope | Do not confuse with |
+|---|---|---|
+| **Cloudflare 25 MiB** | One static asset/chunk (26,214,400 B) | Whole-site total or mobile performance |
+| **GitHub 1 GB** | Desired operating budget **per repository** (1,000,000,000 B), not a hard GitHub platform limit | GitHub's actual 100 MiB ordinary Git-file limit and transfer constraints |
+| **Acho <1,024 UTF-8 bytes** | Typed frame/channel receipt; strict threshold, no silent truncation | Source file, document, model artifact or full repo |
+
+**Migration state:** [LAB #247](https://github.com/piskyRpapalo/lab/pull/247) contains source-gate removal, followed by a required [CI test repair #248](https://github.com/piskyRpapalo/lab/pull/248). APP/WEB contain remaining legacy 16 KiB checks; their ownership/consumer and security review remains open. `NO_DATA(whole_ecosystem_legacy_gate_elimination_not_yet_verified)`. Do not claim runtime removal until the code, CI and E2E prove it; the old ceiling has **no doctrinal authority now**. Bounds derived from schema, trust or safe input handling must be reviewed on their own merits rather than mislabelled as law 8.
