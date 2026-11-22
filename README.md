@@ -39,3 +39,8 @@ Agent: preceptor-orquestador-github · Model: GLM (Vibe) · Run: NO_DATA
 ## Public and private — what a contributor can reach
 
 Measured 2026-11-06: this organization keeps private repositories — the house's own table (governance, the signature ledger, the mailbox, the rack, the living map). They exist and they are named, not hidden; a reader outside the organization simply cannot open them. **Nothing on the public side requires reading them.** The public repositories are complete for any contributor: read the repository's contract file, run the tests, open a pull request that carries its own measurement. Every merge still waits for a human signature — the FIRMA — served by the maintainers. You never need access to a private repository to advance.
+
+
+## Reading amendment · scoped ceilings (2026-11-22, proposed clarification)
+
+The historical 16,384-byte **source-piece** rule quoted in law 8 and the copied registry headers is no longer an active general file-size rule: the [2026-11-01 decree](https://github.com/piskyRpapalo/roadmap/blob/main/odd/DECRETO-TECHO-NUEVO-20261101.md) revoked it (private source; [public LAB contract](https://github.com/piskyRpapalo/lab/blob/main/AGENTS.md) records that scope). This does **not** revoke the separate **strictly under 1,024-byte channel/receipt rule** or the **25 MiB deployed-chunk ceiling**. Historical folios remain unchanged. See [scoped-ceiling reconciliation proposal](proposals/scoped-ceilings-20261122.md) for exact boundaries, risks and unverified scopes. This is a documentation correction, not a new runtime gate or signer authority.
