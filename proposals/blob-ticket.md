@@ -111,3 +111,17 @@ NO_DATA (cause: "awaiting_issuance")
 ---
 
 Agent: Junie · Model: Qwen/Qwen3.6-27B-FP8 · Run: NO_DATA
+
+## Pre-ratification HOLD · 2026-11-22 · complete envelope and trust-identity gates
+
+**Status:** SPECIFICATION-ONLY / HOLD. The preliminary 882-byte temporary-key fixture recorded above is a single synthetic example, **not** a proof that all schema-compliant headers and armored signatures serialize under the Acho frame limit. The proposal currently permits four separate 64-character hash/fingerprint values, a 64-byte content type, a 256-byte free-text cause, a 128-byte trailer, field names, JSON escaping and a variable-size armored SSHSIG. An envelope can therefore overflow even though each individual field respects its own bound. Exact worst-case bytes remain `NO_DATA(maximal_serialized_signed_vectors_not_measured)`; do **not** infer an independently validated maximum from the sum of field budgets.
+
+**Fail-closed required before promoting this vocabulary/contract proposal:**
+
+1. Define a deterministic, unambiguous signed-byte serialization: key ordering, Unicode/UTF-8 normalization, JSON escaping, duplicate-key rejection, excluded/included hash fields, signature namespace and exact envelope length calculation. The historical fabricated `header_sha256` is **not** usable as a test vector.
+2. Verify **the whole transmitted envelope**, with signature and status-specific cause, is strictly below the transport cap **before** publication. If oversized, refuse the complete ticket with a bounded, typed cause in a separately valid receipt; **never truncate signed fields, signature, or payload**. The numerical threshold remains owned by [Study legislation](https://github.com/piskyRpapalo/study/blob/main/02-legislation.md), not a new Babel-wide file-size rule.
+3. Resolve `signer_fp` by fixing **one exact SSH public-key representation** and computing the same digest in APP and Aduana. The existing cross-implementation difference is a **blocking interoperability unknown**, not proof of an accepted identity: `NO_DATA(cross_implementation_fingerprint_vectors_not_measured)`.
+4. Create positive, exact-boundary and negative offline fixtures for all lifecycle states, including maximal cause/trailer, escape expansion, forged/replayed signature, wrong public-key encoding, expiration, duplicate keys and consent denial. Use the existing APP/Aduana verifier infrastructure; do not create a third signing authority.
+5. Only after independently reviewed serialized bytes, host-grant/consent boundaries, and paired APP↔Aduana vectors may a human consider a **new versioned, compact envelope** (candidate: typed cause codes or optional attribution). Such a revision requires new explicit scope and the Sovereign's signature; this addendum does **not** change the schema.
+
+**Acceptance is currently HOLD:** `NO_DATA(maximal_envelope_boundary_test)` + `NO_DATA(canonical_cross_runtime_signer_fingerprint)` + `NO_DATA(ratified_signature_namespace)`. No code, keys, signatures, runtime or active TRAIN-02/security-study process touched by this GitHub document-only note.
