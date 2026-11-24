@@ -1,6 +1,6 @@
 # registry/governance.md — governance and method
 
-> THE BABEL REGISTRY · the single vocabulary house (decree of the Sovereign, 2026-11-03). Transcribed verbatim from the measured source below; when this registry and any other document differ, this registry wins (single-house law). One piece ≤ 16,384 B.
+> THE BABEL REGISTRY · the single vocabulary house (decree of the Sovereign, 2026-11-03). Transcribed verbatim from the measured source below; when this registry and any other document differ, this registry wins (single-house law). The former general 16,384 B source-piece ceiling is revoked by the Sovereign's 2026-11-01 decree; scoped technical limits remain.
 
 ---
 
@@ -21,7 +21,7 @@
 | scrub | scrub | Removing private names from public artifacts; figures and paths stay, names go. | in use |
 | NO_DATA | NO_DATA | Declared, never invented — always with a cause. | in use |
 | stamps | sellos de estado | LIVE · STALE · STATIC · SIMULATED · NO_DATA · ERROR. | in use |
-| propose-only | proponer sin ejecutar | Silicon writes and proposes; it never merges, never signs, never pushes to jetson. | in use |
+| propose-only | modo de propuesta L0 | A review-only mode, not a permanent incapacity of a preceptor. Scoped branch pushes are allowed by the current grant; an authorized lane may execute covered merges/deployments (Preceptor Contract L1/L2). Only the Sovereign grants/signs; never bypass an effective target fence. | in use (L0 mode) |
 | **HITL** (hitl) | REQUIERE_FIRMA · IronClaw | Human-in-the-loop: the gate AND the carbon's everyday gesture — "Say Hi" is its living example. FIRMO 2026-10-22. | in use |
 | the Signing Tray | la bandeja de firmas | The rack's pending table. A row closes with its measure; a close without a figure is a second opinion. | in use |
 | measured close | cierre con la medida | "RESOLVED" must carry a verifiable number next to it. | in use |
