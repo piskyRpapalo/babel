@@ -9,7 +9,7 @@ Decree of the Sovereign (2026-11-03): all vocabulary pieces live here, once — 
 3. A term earns its place the Alphabet way: it exists for real, it tokenizes cheap, it collides with nothing.
 4. Every term carries a way to see it with your own eyes (the Eye's rule); if no command shows it, it is a belief, not knowledge.
 5. History is append-only: an old folio speaks with the names of its date; aliases never die.
-6. Silicon proposes, carbon signs: sign-off is the Sovereign's; every preceptor travels propose-only.
+6. The Sovereign retains signing authority. `propose-only` names L0 review mode, not a universal restriction on a preceptor: authorized execution may operate within effective L1/L2 delegation, with receipts and revocation.
 7. Forbidden as names, in any language (game.md §E): oracle · notary · depin · coin · clearing · magic · token-as-a-name · cryptocurrency. «bubble» names the language only as history — the language is the Acho language. This law governs game-world names (registry/game.md §E); the registry's own word «coins» for its vocabulary files is legal and stays.
 8. One piece ≤ 16,384 B, declared per file. Private names never enter (scrub law): figures and paths stay, names go.
    **Current reading (Sovereign decision, 2026-11-22):** the general source-piece rule quoted here is **REVOKED** by the dated 2026-11-01 decree. The numerical authority now belongs to [Study legislation](https://github.com/piskyRpapalo/study/blob/main/02-legislation.md); Babel retains the **TERM**, not the figures. The copied registry headers remain historical. See [the scoped reconciliation proposal](proposals/scoped-ceilings-20261122.md).
@@ -40,7 +40,7 @@ Agent: preceptor-orquestador-github · Model: GLM (Vibe) · Run: NO_DATA
 
 ## Public and private — what a contributor can reach
 
-Measured 2026-11-06: this organization keeps private repositories — the house's own table (governance, the signature ledger, the mailbox, the rack, the living map). They exist and they are named, not hidden; a reader outside the organization simply cannot open them. **Nothing on the public side requires reading them.** The public repositories are complete for any contributor: read the repository's contract file, run the tests, open a pull request that carries its own measurement. Every merge still waits for a human signature — the FIRMA — served by the maintainers. You never need access to a private repository to advance.
+Measured 2026-11-06: this organization keeps private repositories — the house's own table (governance, the signature ledger, the mailbox, the rack, the living map). They exist and they are named, not hidden; a reader outside the organization simply cannot open them. **Nothing on the public side requires reading them.** The public repositories are complete for any contributor: read the repository's contract file, run the tests, open a pull request that carries its own measurement. Value-bearing merges require an applicable Sovereign authorization: an exact-head decision or a supported bounded delegation issued by the Sovereign. The executor may be a delegated preceptor; publication and E2E evidence are separate. You never need access to a private repository to advance.
 
 ## Reading amendment · scoped ceilings (2026-11-22, Sovereign decision)
 
