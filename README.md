@@ -1,5 +1,7 @@
 # the Babel Registry — the single vocabulary house of PreceptorOS
 
+> **Operational preceptors:** follow the [native MCP first preflight](https://github.com/piskyRpapalo/study/blob/main/08-ai-fluency.md) when the owner-provided connector is available. Verify actual scope and evidence before relying on a tool. This reference does not coin terms, change Babel's authority, or require access to private infrastructure for public contributions.
+
 Decree of the Sovereign (2026-11-03): all vocabulary pieces live here, once — the single house. Study remains the house of study; the web lexicon froze as this registry's seed. When this registry and any other document differ, this registry wins.
 
 ## Laws (inherited, standing)
